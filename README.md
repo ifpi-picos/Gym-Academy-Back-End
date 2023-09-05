@@ -1,5 +1,6 @@
 Gym Academy
 
 Equipe:
-Vitor Ricardo
+Vitor Ricardo 
+
 Pedro Henrique
