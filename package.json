@@ -1,0 +1,37 @@
+{
+  "name": "node-typescript-starter",
+  "version": "1.0.0",
+  "outDir": "dist",
+  "description": "Template de configurações para utilizar o NodeJS em conjunto com o TypeScript",
+  "main": "src/server.ts",
+  "include": [
+    "src/**/*"
+  ],
+  "scripts": {
+    "start": "node dist/server.ts",
+    "start:dev": "ts-node-dev src/app.ts",
+    "lint": "eslint ./src --ext .ts",
+    "lint-fix": "eslint ./src .test --ext .ts --fix",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
+    "format": "prettier --write \"**/*.{html,js,ts,tsx,json,jsx,css}\""
+  },
+  "dependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/config": "^3.3.0",
+    "@types/express": "^4.17.17",
+    "@types/mongoose": "5.11.97",
+    "@types/node": "^20.4.2",
+    "@types/typescript": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "7.3.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.1.6",
+    "typescript-eslint": "^0.0.1-alpha.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0"
+  }
+}
