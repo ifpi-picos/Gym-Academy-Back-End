@@ -1,11 +1,13 @@
 import Express from "express"
 import mongoose from "mongoose"
 import receitaRouter from "./routes/receitaRouter";
+import tabelaDeTreinoRouter from "./routes/tabelaDeTreinoRouter";
 
 const app = Express()
 app.use(Express.json())
 
-app.use('/',receitaRouter) //quando terminar rota vim aki pro app e fazer os outros
+app.use('/',receitaRouter) 
+app.use('/',tabelaDeTreinoRouter)
 
 mongoose.Promise = global.Promise
 mongoose
