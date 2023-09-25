@@ -2,12 +2,14 @@ import Express from "express"
 import mongoose from "mongoose"
 import receitaRouter from "./routes/receitaRouter";
 import tabelaDeTreinoRouter from "./routes/tabelaDeTreinoRouter";
+import instrucaoDeTreinoRouter from "./routes/instrucaoDeTreinoRouter";
 
 const app = Express()
 app.use(Express.json())
 
 app.use('/',receitaRouter) 
 app.use('/',tabelaDeTreinoRouter)
+app.use('/',instrucaoDeTreinoRouter)
 
 mongoose.Promise = global.Promise
 mongoose
