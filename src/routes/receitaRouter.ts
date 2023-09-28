@@ -25,7 +25,7 @@ receitaRouter.put('/alterar-receita/:id',async(req:Request,res:Response)=>{
     }
 })
 
-receitaRouter.post('/deletar-receita/:id',async(req:Request,res:Response)=>{
+receitaRouter.delete('/deletar-receita/:id',async(req:Request,res:Response)=>{
     try {
         const {id} = req.params
 

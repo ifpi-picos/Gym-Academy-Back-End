@@ -22,7 +22,7 @@ instrucaoDeTreinoRouter.put('/alterar-instrução/:id',async(req:Request,res:Res
     }
 })
 
-instrucaoDeTreinoRouter.post('/deletar-instrução/:id',async(req:Request,res:Response)=>{
+instrucaoDeTreinoRouter.delete('/deletar-instrução/:id',async(req:Request,res:Response)=>{
     try{
         const {id} = req.params
 

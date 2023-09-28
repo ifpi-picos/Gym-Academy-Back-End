@@ -22,7 +22,7 @@ tabelaDeTreinoRouter.put('/alterar-tabela/:id',async(req:Request,res:Response)=>
     }
 })
 
-tabelaDeTreinoRouter.post('/deletar-tabela/:id',async(req:Request,res:Response)=>{
+tabelaDeTreinoRouter.delete('/deletar-tabela/:id',async(req:Request,res:Response)=>{
     try{
         const {id} = req.params
         
