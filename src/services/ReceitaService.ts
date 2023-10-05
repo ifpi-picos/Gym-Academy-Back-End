@@ -9,7 +9,11 @@ class ReceitaService {
     }
     public async novaReceita(receitaData:IReceitas){
         try {
+            const receitaExistente = await Receitas.findOne({nome:receitaData.nome})
             const novaReceita = await this.receita.create(receitaData)
+            if(receitaExistente){
+                return null
+            }
             return novaReceita
         } catch (error) {
             throw new Error('Erro ao salvar á receita!')
