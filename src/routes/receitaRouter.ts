@@ -69,7 +69,7 @@ receitaRouter.put('/alterar-receita/:id',async(req:Request,res:Response)=>{
 
         }
     } catch (error) {
-        res.json(error)
+    return    res.json(error)
 
     }
 })
@@ -81,7 +81,7 @@ receitaRouter.delete('/deletar-receita/:id',async(req:Request,res:Response)=>{
          await ReceitaService.deletar(id)
      return   res.json({Message:'receita deletada com sucesso!'})
     } catch (error) {
-        res.json(error)
+    return    res.json(error)
 
     }
 })
@@ -92,7 +92,7 @@ receitaRouter.get('/',async(req:Request,res:Response)=>{
     return    res.json(receitas)
 
     } catch (error) {
-        res.json(error)
+    return    res.json(error)
 
     }
     })

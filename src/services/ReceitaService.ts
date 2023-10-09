@@ -14,7 +14,7 @@ class ReceitaService {
             if(receitaExistente){
                 return null
             }
-            return novaReceita
+            return this.novaReceita
         } catch (error) {
             throw new Error('Erro ao salvar á receita!')
         }

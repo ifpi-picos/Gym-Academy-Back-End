@@ -14,7 +14,7 @@ class TabelaDeTreinoService {
             if(tabelaDeTreinoExistente){
                 return null
             }
-            return novaTabelaDeTreino
+            return this.novaTabelaDeTreino
         }   catch (error) {
             throw new Error('Erro ao salvar á tabela de treino!')
         }

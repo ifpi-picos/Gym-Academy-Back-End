@@ -68,7 +68,7 @@ tabelaDeTreinoRouter.put('/alterar-tabelaDeTreino/:id',async(req:Request,res:Res
 
         }
     } catch (error) {
-        res.json(error)
+    return    res.json(error)
 
     }
 })
@@ -80,7 +80,7 @@ tabelaDeTreinoRouter.delete('/deletar-tabelaDeTreino/:id',async(req:Request,res:
          await TabelaDeTreinoService.deletar(id)
     return  res.json({Message:'Tabela deletada com sucesso!'})
     } catch (error) {
-        res.json(error)
+    return    res.json(error)
 
     }
 })
@@ -91,7 +91,7 @@ tabelaDeTreinoRouter.get('/',async(req:Request,res:Response)=>{
      return   res.json(TabelaDeTreino)
 
     } catch (error) {
-        res.json(error)
+    return    res.json(error)
 
     }
     })
