@@ -9,7 +9,11 @@ class TabelaDeTreinoService {
     }
     public async novaTabelaDeTreino(TabelaDeTreinoData:ITabelaDeTreino){
         try{
+            const tabelaDeTreinoExistente = await TabelaDeTreino.findOne({nome:TabelaDeTreinoData.nomeExercicio})
             const novaTabelaDeTreino = await this.tabelaDeTreino.create(TabelaDeTreinoData)
+            if(tabelaDeTreinoExistente){
+                return null
+            }
             return novaTabelaDeTreino
         }   catch (error) {
             throw new Error('Erro ao salvar á tabela de treino!')

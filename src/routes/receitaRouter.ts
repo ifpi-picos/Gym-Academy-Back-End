@@ -79,7 +79,7 @@ receitaRouter.delete('/deletar-receita/:id',async(req:Request,res:Response)=>{
         const {id} = req.params
 
          await ReceitaService.deletar(id)
-        res.json({Message:'receita deletada com sucesso!'})
+     return   res.json({Message:'receita deletada com sucesso!'})
     } catch (error) {
         res.json(error)
 
@@ -89,7 +89,7 @@ receitaRouter.delete('/deletar-receita/:id',async(req:Request,res:Response)=>{
 receitaRouter.get('/',async(req:Request,res:Response)=>{
     try {
         const receitas = await ReceitaService.receitas()
-        res.json(receitas)
+    return    res.json(receitas)
 
     } catch (error) {
         res.json(error)
