@@ -89,7 +89,7 @@ instrucaoDeTreinoRouter.delete('/deletar-instrucaoDeTreino/:id',async(req:Reques
 
 instrucaoDeTreinoRouter.get('/',async(req:Request,res:Response)=>{
     try {
-        const receitas = await IntrucaoDeTreinoService.InstrucaoDeTreino()
+        const instrucaoDeTreino = await IntrucaoDeTreinoService.InstrucaoDeTreino()
      return   res.json(InstrucaoDeTreino)
 
     } catch (error) {

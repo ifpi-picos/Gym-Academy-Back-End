@@ -1,0 +1,587 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "API Gym Academy",
+      "version": "1.0.0",
+      "description": "API para gerenciar instruções de treino e receitas"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5000/",
+        "description": "Local development server"
+      }
+    ],
+    "paths": {
+      "/nova-instrucaoDeTreino": {
+        "post": {
+          "summary": "Criar nova instrução de treino",
+          "tags": ["Instrução de Treino"],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NovaInstrucaoDeTreino"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Instrução de treino salva com sucesso",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Instrução de treino salva com sucesso!",
+                    "data": {
+                      "$ref": "#/components/schemas/InstrucaoDeTreino"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Instrução de treino já cadastrada",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Instrução de treino já cadastrada!"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/alterar-instrucaoDeTreino/{id}": {
+        "put": {
+          "summary": "Alterar instrução de treino existente",
+          "tags": ["Instrução de Treino"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "ID da instrução de treino a ser alterada"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NovaInstrucaoDeTreino"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Instrução de treino alterada com sucesso",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Instrução de treino alterada com sucesso!",
+                    "data": {
+                      "$ref": "#/components/schemas/InstrucaoDeTreino"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Instrução de treino já cadastrada",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Instrução de treino já cadastrada!"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/deletar-instrucaoDeTreino/{id}": {
+        "delete": {
+          "summary": "Deletar instrução de treino existente",
+          "tags": ["Instrução de Treino"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "ID da instrução de treino a ser deletada"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Instrução deletada com sucesso"
+            },
+            "400": {
+              "description": "Erro ao deletar instrução de treino",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Erro ao deletar instrução de treino"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/instrucoesDeTreino": {
+        "get": {
+          "summary": "Obter lista de instruções de treino",
+          "tags": ["Instrução de Treino"],
+          "responses": {
+            "200": {
+              "description": "Lista de instruções de treino",
+              "content": {
+                "application/json": {
+                  "example": [
+                    {
+                      "$ref": "#/components/schemas/InstrucaoDeTreino"
+                    }
+                  ]
+                }
+              }
+            },
+            "400": {
+              "description": "Erro ao obter a lista de instruções de treino",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Erro ao obter a lista de instruções de treino"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/nova-tabelaDeTreino": {
+        "post": {
+          "summary": "Criar nova tabela de treino",
+          "tags": ["Tabela de Treino"],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NovaTabelaDeTreino"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Tabela de treino salva com sucesso",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Tabela de treino salva com sucesso!",
+                    "data": {
+                      "$ref": "#/components/schemas/TabelaDeTreino"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Tabela de treino já cadastrada",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Tabela de treino já cadastrada!"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/alterar-tabelaDeTreino/{id}": {
+        "put": {
+          "summary": "Alterar tabela de treino existente",
+          "tags": ["Tabela de Treino"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "ID da tabela de treino a ser alterada"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NovaTabelaDeTreino"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Tabela de treino alterada com sucesso",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Tabela de treino alterada com sucesso!",
+                    "data": {
+                      "$ref": "#/components/schemas/TabelaDeTreino"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Tabela de treino já cadastrada",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Tabela de treino já cadastrada!"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/deletar-tabelaDeTreino/{id}": {
+        "delete": {
+          "summary": "Deletar tabela de treino existente",
+          "tags": ["Tabela de Treino"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "ID da tabela de treino a ser deletada"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Tabela de treino deletada com sucesso"
+            },
+            "400": {
+              "description": "Erro ao deletar tabela de treino",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Erro ao deletar tabela de treino"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/tabelasDeTreino": {
+        "get": {
+          "summary": "Obter lista de tabelas de treino",
+          "tags": ["Tabela de Treino"],
+          "responses": {
+            "200": {
+              "description": "Lista de tabelas de treino",
+              "content": {
+                "application/json": {
+                  "example": [
+                    {
+                      "$ref": "#/components/schemas/TabelaDeTreino"
+                    }
+                  ]
+                }
+              }
+            },
+            "400": {
+              "description": "Erro ao obter a lista de tabelas de treino",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Erro ao obter a lista de tabelas de treino"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/nova-receita": {
+        "post": {
+          "summary": "Criar nova receita",
+          "tags": ["Receita"],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NovaReceita"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Receita salva com sucesso",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Receita salva com sucesso!",
+                    "data": {
+                      "$ref": "#/components/schemas/Receita"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Receita já cadastrada",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Receita já cadastrada!"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/alterar-receita/{id}": {
+        "put": {
+          "summary": "Alterar receita existente",
+          "tags": ["Receita"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "ID da receita a ser alterada"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NovaReceita"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Receita alterada com sucesso",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Receita alterada com sucesso!",
+                    "data": {
+                      "$ref": "#/components/schemas/Receita"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Receita já cadastrada",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Receita já cadastrada!"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/deletar-receita/{id}": {
+        "delete": {
+          "summary": "Deletar receita existente",
+          "tags": ["Receita"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "ID da receita a ser deletada"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Receita deletada com sucesso"
+            },
+            "400": {
+              "description": "Erro ao deletar receita",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Erro ao deletar receita"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/receitas": {
+        "get": {
+          "summary": "Obter lista de receitas",
+          "tags": ["Receita"],
+          "responses": {
+            "200": {
+              "description": "Lista de receitas",
+              "content": {
+                "application/json": {
+                  "example": [
+                    {
+                      "$ref": "#/components/schemas/Receita"
+                    }
+                  ]
+                }
+              }
+            },
+            "400": {
+              "description": "Erro ao obter a lista de receitas",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "Message": "Erro ao obter a lista de receitas"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "NovaInstrucaoDeTreino": {
+          "type": "object",
+          "properties": {
+            "gif": {
+              "type": "string"
+            },
+            "nomeDoTreino": {
+              "type": "string"
+            },
+            "descricao": {
+              "type": "string"
+            },
+            "comoExecutar": {
+              "type": "string"
+            }
+          },
+          "required": ["gif", "nomeDoTreino", "descricao", "comoExecutar"]
+        },
+        "InstrucaoDeTreino": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "gif": {
+              "type": "string"
+            },
+            "nomeDoTreino": {
+              "type": "string"
+            },
+            "descricao": {
+              "type": "string"
+            },
+            "comoExecutar": {
+              "type": "string"
+            }
+          }
+        },
+        "NovaTabelaDeTreino": {
+          "type": "object",
+          "properties": {
+            "nomeExercicio": {
+              "type": "string"
+            },
+            "numeroDeSerie": {
+              "type": "integer"
+            },
+            "numeroDeRepeticao": {
+              "type": "integer"
+            }
+          },
+          "required": ["nomeExercicio", "numeroDeSerie", "numeroDeRepeticao"]
+        },
+        "TabelaDeTreino": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "nomeExercicio": {
+              "type": "string"
+            },
+            "numeroDeSerie": {
+              "type": "integer"
+            },
+            "numeroDeRepeticao": {
+              "type": "integer"
+            }
+          }
+        },
+        "NovaReceita": {
+          "type": "object",
+          "properties": {
+            "nome": {
+              "type": "string"
+            },
+            "descricao": {
+              "type": "string"
+            },
+            "ingredientes": {
+              "type": "string"
+            },
+            "modoDePreparo": {
+              "type": "string"
+            }
+          },
+          "required": ["nome", "descricao", "ingredientes", "modoDePreparo"]
+        },
+        "Receita": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "nome": {
+              "type": "string"
+            },
+            "descricao": {
+              "type": "string"
+            },
+            "ingredientes": {
+              "type": "string"
+            },
+            "modoDePreparo": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }

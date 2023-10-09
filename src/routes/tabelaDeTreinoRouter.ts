@@ -87,7 +87,7 @@ tabelaDeTreinoRouter.delete('/deletar-tabelaDeTreino/:id',async(req:Request,res:
 
 tabelaDeTreinoRouter.get('/',async(req:Request,res:Response)=>{
     try {
-        const receitas = await TabelaDeTreinoService.TabelasDeTreino()
+        const tabelaDeTreino = await TabelaDeTreinoService.TabelasDeTreino()
      return   res.json(TabelaDeTreino)
 
     } catch (error) {

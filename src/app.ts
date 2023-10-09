@@ -3,13 +3,21 @@ import mongoose from "mongoose"
 import receitaRouter from "./routes/receitaRouter";
 import tabelaDeTreinoRouter from "./routes/tabelaDeTreinoRouter";
 import instrucaoDeTreinoRouter from "./routes/instrucaoDeTreinoRouter";
+import swaggerUI from 'swagger-ui-express';
+import swaggerDocs from './swagger.json'
+
 
 const app = Express()
 app.use(Express.json())
 
 app.use('/',receitaRouter) 
-app.use('/',tabelaDeTreinoRouter)
-app.use('/',instrucaoDeTreinoRouter)
+app.use('/tabelaDeTreino',tabelaDeTreinoRouter)
+app.use('/instrucaoDeTreino',instrucaoDeTreinoRouter)
+app.use(
+  '/api-docs',
+  swaggerUI.serve,
+  swaggerUI.setup(swaggerDocs),
+);
 
 mongoose.Promise = global.Promise
 mongoose
