@@ -5,6 +5,7 @@ import tabelaDeTreinoRouter from "./routes/tabelaDeTreinoRouter";
 import instrucaoDeTreinoRouter from "./routes/instrucaoDeTreinoRouter";
 import swaggerUI from 'swagger-ui-express';
 import swaggerDocs from './swagger.json'
+import userRouter from "./routes/usuarioRouter";
 
 
 const app = Express()
@@ -13,6 +14,7 @@ app.use(Express.json())
 app.use('/',receitaRouter) 
 app.use('/tabelaDeTreino',tabelaDeTreinoRouter)
 app.use('/instrucaoDeTreino',instrucaoDeTreinoRouter)
+app.use('/',userRouter)
 app.use(
   '/api-docs',
   swaggerUI.serve,
