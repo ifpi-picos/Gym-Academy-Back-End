@@ -6,7 +6,7 @@ import instrucaoDeTreinoRouter from "./routes/instrucaoDeTreinoRouter";
 import swaggerUI from 'swagger-ui-express';
 import swaggerDocs from './swagger.json'
 import userRouter from "./routes/usuarioRouter";
-
+import cors from 'cors';
 
 const app = Express()
 app.use(Express.json())
@@ -20,7 +20,7 @@ app.use(
   swaggerUI.serve,
   swaggerUI.setup(swaggerDocs),
 );
-
+app.use(cors());
 mongoose.Promise = global.Promise
 mongoose
       .connect(
