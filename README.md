@@ -8,26 +8,21 @@ O GYM ACADEMY é um sistema online que visa melhorar a experiência dos alunos d
 
 ## Equipe de Desenvolvedores
 
-- Vitor Ricardo (Backend)
-- Pedro Henrique (Frontend)
+- Vitor Ricardo (Back-End)
+- Pedro Henrique (Front-End)
 
 
 ## Funcionalidades
 
-- Cadastro de alunos
-- Registro de treinos personalizados
-- Gif instrutivos de exercícios
-- Tabela de Treinos
-- Alimentação
-
+- Cadastro do usuário (usuário)
+- Cadastro e gerenciamento de treinos (Administrador)
+- Cadastro e gerenciamento de Receitas (Administrador)
+- Criar/ alterar tabela de treino (usuário)
   
 ## Logos de Tecnologias
 
 - Node.js
-
-
-- React
-
-
-- MongoDB
-
+- Express.js
+- TypeScript
+- Mongoose(MongoDB)
+- Swagger

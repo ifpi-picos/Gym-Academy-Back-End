@@ -1,6 +1,8 @@
 import { Router,Request,Response } from "express";
 import ReceitaService from "../services/ReceitaService";
 import validation from "../middlewares/validation";
+import Receitas from "../models/Receitas";
+
 
 const receitaRouter = Router();
 
@@ -96,5 +98,13 @@ receitaRouter.get('/',async(req:Request,res:Response)=>{
 
     }
     })
-
+    receitaRouter.delete('/deletar-todas-as-receitas',async(req:Request,res:Response)=>{
+        try {
+            return await Receitas.deleteMany()
+    
+        } catch (error) {
+            return res.json(error)
+    
+        }
+        })
     export default receitaRouter
