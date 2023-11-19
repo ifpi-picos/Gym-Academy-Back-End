@@ -12,6 +12,7 @@ instrucaoDeTreinoRouter.post('/nova-instrucaoDeTreino',async(req:Request,res:Res
             'nomeDoTreino',
             'descricao',
             'comoExecutar',
+            'tipo',
         ];
 
         const erros: string[] = [];
@@ -87,7 +88,7 @@ instrucaoDeTreinoRouter.delete('/deletar-instrucaoDeTreino/:id',async(req:Reques
     }
 })
 
-instrucaoDeTreinoRouter.get('/',async(req:Request,res:Response)=>{
+instrucaoDeTreinoRouter.get('/treinos',async(req:Request,res:Response)=>{
     try {
         const instrucaoDeTreino = await IntrucaoDeTreinoService.InstrucaoDeTreino()
      return   res.json(InstrucaoDeTreino)

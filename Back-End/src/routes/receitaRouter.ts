@@ -88,7 +88,7 @@ receitaRouter.delete('/deletar-receita/:id',async(req:Request,res:Response)=>{
     }
 })
 
-receitaRouter.get('/',async(req:Request,res:Response)=>{
+receitaRouter.get('/receitas',async(req:Request,res:Response)=>{
     try {
         const receitas = await ReceitaService.receitas()
     return    res.json(receitas)

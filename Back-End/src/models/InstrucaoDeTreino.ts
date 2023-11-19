@@ -15,6 +15,9 @@ const instrucaoDeTreinoSchema = new Schema<IInstrucaoDeTreino>({
     comoExecutar:{
         type:String
     },
+    tipo:{
+        type:String
+    },
 })
 
 export default model<IInstrucaoDeTreino>('instrucaoDeTreino',instrucaoDeTreinoSchema)

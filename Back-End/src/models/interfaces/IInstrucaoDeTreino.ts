@@ -5,6 +5,7 @@ interface IInstrucaoDeTreino extends Document {
     nomeDoTreino:String
     descricao:String
     comoExecutar:String
+    tipo:String
 }
 
 export default IInstrucaoDeTreino

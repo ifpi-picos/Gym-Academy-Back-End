@@ -13,7 +13,7 @@ app.use(Express.json())
 
 app.use('/',receitaRouter) 
 app.use('/tabelaDeTreino',tabelaDeTreinoRouter)
-app.use('/instrucaoDeTreino',instrucaoDeTreinoRouter)
+app.use('/',instrucaoDeTreinoRouter)
 app.use('/',userRouter)
 app.use(
   '/api-docs',
