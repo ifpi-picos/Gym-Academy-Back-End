@@ -64,14 +64,14 @@ receitaRouter.put('/alterar-receita/:id',async(req:Request,res:Response)=>{
 
         const alterarReceita = await ReceitaService.atualizarReceita(id,req.body)
         if(alterarReceita === null){
-            return res.status(400).json({Message:'Receita já Cadastrads!'})
+            return res.status(400).json({Message:'Receita já Cadastrada!'})
 
         }
-       return  res.status(500).json({Message:'receita alterada com sucesso!',data:alterarReceita})
+       return  res.status(200).json({Message:'receita alterada com sucesso!',data:alterarReceita})
 
         }
     } catch (error) {
-    return    res.json(error)
+        return res.json(error)
 
     }
 })
