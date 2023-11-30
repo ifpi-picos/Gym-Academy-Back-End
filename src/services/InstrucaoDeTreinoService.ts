@@ -9,12 +9,9 @@ class InstrucaoDeTreinoService {
     }
     public async novaInstrucaoDeTreino(InstrucaoDeTreinoData:IInstrucaoDeTreino){
         try{
-            const instrucaoDeTreinoExistente = await InstrucaoDeTreino.findOne({nome:InstrucaoDeTreinoData.nomeDoTreino})
-            const novaTabelaDeTreino = await this.instrucaoDeTreino.create(InstrucaoDeTreinoData)
-            if(instrucaoDeTreinoExistente){
-                return null
-            }
-            return this.novaInstrucaoDeTreino
+            
+            return await this.instrucaoDeTreino.create(InstrucaoDeTreinoData)
+            
         }   catch (error) {
             throw new Error('Erro ao salvar á instrução de treino!')
         }

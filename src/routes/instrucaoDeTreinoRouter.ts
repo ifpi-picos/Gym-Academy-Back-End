@@ -29,9 +29,7 @@ instrucaoDeTreinoRouter.post('/nova-instrucaoDeTreino',async(req:Request,res:Res
         } 
         else{
         const novaInstrucaoDeTreino = await IntrucaoDeTreinoService.novaInstrucaoDeTreino(req.body)
-        if(novaInstrucaoDeTreino === null){
-            return res.status(400).json({Message:'Instrução de treino já cadastrada!'})
-        }
+       
        return res.status(200).json({Message:'Instrução de treino salva com sucesso!',data:novaInstrucaoDeTreino})
     }
     } catch (error) {
@@ -44,7 +42,6 @@ instrucaoDeTreinoRouter.put('/alterar-instrucaoDeTreino/:id',async(req:Request,r
     try {
          const {id} = req.params
          const camposAValidar = [
-            'gif',
             'nomeDoTreino',
             'descricao',
             'comoExecutar',
