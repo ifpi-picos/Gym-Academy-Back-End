@@ -10,6 +10,7 @@ import cors from 'cors';
 
 const app = Express()
 app.use(Express.json())
+app.use(cors());
 
 app.use('/',receitaRouter) 
 app.use('/tabelaDeTreino',tabelaDeTreinoRouter)
@@ -20,7 +21,6 @@ app.use(
   swaggerUI.serve,
   swaggerUI.setup(swaggerDocs),
 );
-app.use(cors());
 mongoose.Promise = global.Promise
 mongoose
       .connect(
