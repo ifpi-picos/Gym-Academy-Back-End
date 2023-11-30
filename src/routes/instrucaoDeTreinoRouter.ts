@@ -2,6 +2,7 @@ import { Router,Request,Response } from "express";
 import IntrucaoDeTreinoService from "../services/InstrucaoDeTreinoService"
 import validation from "../middlewares/validation";
 import InstrucaoDeTreino from "../models/InstrucaoDeTreino";
+import InstrucaoDeTreinoService from "../services/InstrucaoDeTreinoService";
 
 const instrucaoDeTreinoRouter = Router();
 
@@ -47,6 +48,7 @@ instrucaoDeTreinoRouter.put('/alterar-instrucaoDeTreino/:id',async(req:Request,r
             'nomeDoTreino',
             'descricao',
             'comoExecutar',
+            'tipo',
         ];
 
         const erros: string[] = [];
@@ -98,5 +100,16 @@ instrucaoDeTreinoRouter.get('/treinos',async(req:Request,res:Response)=>{
 
     }
     })
+
+instrucaoDeTreinoRouter.get('/treinos-por-tipo/:tipo', async (req: Request, res: Response) => {
+        try {
+          const { tipo } = req.params;
+          const instrucoesPorTipo = await InstrucaoDeTreinoService.getInstrucaoDeTreinoByTipo(tipo);
+      
+          return res.status(200).json(instrucoesPorTipo);
+        } catch (error) {
+            return res.status(500).json({ Message: "Houve um erro interno!" })
+        }
+      });
 
     export default instrucaoDeTreinoRouter

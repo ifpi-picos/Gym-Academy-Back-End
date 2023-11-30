@@ -40,6 +40,14 @@ class InstrucaoDeTreinoService {
             throw new Error('Erro ao listar á instrução de treino!')
         }
     }
+
+    public async getInstrucaoDeTreinoByTipo(tipo: string): Promise<IInstrucaoDeTreino[]> {
+        try {
+          return await this.instrucaoDeTreino.find({ tipo });
+        } catch (error) {
+            throw new Error(`Erro ao obter instruções de treino por tipo! Detalhes: ${error}`);
+        }
+      }
 }
 
 export default new InstrucaoDeTreinoService()
